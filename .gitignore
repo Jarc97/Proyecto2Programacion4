@@ -1,7 +1,7 @@
 # Netbeans
-/build/*
-/dist/*
-nbproject/private/*
+Votaciones/build/*
+Votaciones/dist/*
+Votaciones/nbproject/private/*
 
 # Compiled class file
 *.class
