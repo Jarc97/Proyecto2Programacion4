@@ -5,43 +5,74 @@
  */
 package servicios;
 
+import control.GestorCargaUsuarios;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author julio
  */
+
+@WebServlet
+@MultipartConfig()
 public class ServicioCargarUsuarios extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServicioCargarUsuarios</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServicioCargarUsuarios at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            for (Part part : request.getParts()) {
+                String nombreArchivo = part.getSubmittedFileName();
+                System.out.println(part.getContentType());
+                
+                String xmlStr = new Scanner(part.getInputStream()).useDelimiter("\\A").next();
+                
+                GestorCargaUsuarios gcu = GestorCargaUsuarios.obtenerInstancia();
+                gcu.interpretar(xmlStr);
+                
+                if (nombreArchivo.isEmpty()) {
+                    request.setAttribute("mensaje",
+                            "Se omitió la selección del archivo.");
+                    break;
+                }
+                /*
+                if (Gallery.validate(nombreArchivo)) {
+                    Gallery g1 = (Gallery) getServletContext().getAttribute("g1");
+                    try {
+                        g1.saveImage(nombreArchivo, part.getContentType(),
+                                part.getInputStream(), (int) part.getSize());
+                    } catch (Exception ex) {
+                        request.setAttribute("mensaje",
+                                String.format("Excepción: '%s'", ex.getMessage()));
+                    }
+                } else {
+                    request.setAttribute("mensaje",
+                            "El formato del archivo es incorrecto.");
+                    break;
+                }
+                */
+            }
+        } catch (IOException | ServletException ex) {
+            request.setAttribute("mensaje",
+                    String.format("Ocurrió una excepción: '%s'", ex.getMessage()));
         }
+
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -56,7 +87,11 @@ public class ServicioCargarUsuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ServicioCargarUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -70,7 +105,11 @@ public class ServicioCargarUsuarios extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ServicioCargarUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

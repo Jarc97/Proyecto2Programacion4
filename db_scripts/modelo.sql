@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `bd_votaciones`.`administrador` (
   `nombre` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(16) NOT NULL,
   `clave` VARCHAR(16) NOT NULL,
+  `observaciones` TEXT NULL,
   PRIMARY KEY (`cedula`))
 ENGINE = InnoDB;
  

@@ -1,0 +1,14 @@
+<usuario>
+    <nombre>Julio</nombre>
+    <apellido1>Rodríguez</apellido1>
+    <apellido2>Chavarría</apellido2>
+    <cedula>116760031</cedula>
+    <clave>116760031</clave>
+</usuario>
+<usuario>
+    <nombre>Luis</nombre>
+    <apellido1>Soto</apellido1>
+    <apellido2>Cruz</apellido2>
+    <cedula>402360123</cedula>
+    <clave>402360123</clave>
+</usuario>
