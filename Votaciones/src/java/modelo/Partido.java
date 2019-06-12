@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
  */
 public class Partido {
     private String nombre;
-    private String abreviatura;
+    private String siglas;
     private BufferedImage bandera;
     private Usuario candidato;
     private BufferedImage fotoCandidato;
@@ -23,8 +23,8 @@ public class Partido {
         return nombre;
     }
 
-    public String getAbreviatura() {
-        return abreviatura;
+    public String getSiglas() {
+        return siglas;
     }
 
     public BufferedImage getBandera() {
