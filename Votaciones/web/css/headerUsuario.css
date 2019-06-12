@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/06/2019, 05:09:55 PM
+    Author     : Feli
+*/
+
+.headerNavbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.headerNavbar li {
+  float: left;
+}
+
+.headerNavbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.headerNavbar li a.nav-link:hover {
+    background-color: #666666;
+}

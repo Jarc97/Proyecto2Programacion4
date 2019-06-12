@@ -1,0 +1,25 @@
+<%-- 
+    Document   : headerAdministrador
+    Created on : 07/06/2019, 01:54:41 PM
+    Author     : Feli
+--%>
+
+<link href="css/headerAdministrador.css" rel="stylesheet" type="text/css"/>
+<header >      
+    <div class="headerNavbar">        
+        <ul >
+            <li><a class="navbar-brand"><img src="img/logoDoge.png" alt="LogoDoge" height="30" width="30"></a></li>
+            <li><a class="nav-link" href="principalAdministrador.jsp">Inicio</a> </li>
+            <li><a class="navbar-brand" href="#">|</a> </li>
+            <li><a class="nav-link" href="formacionGrupo.jsp">Registrar Partidos</a></li>
+            <li><a class="navbar-brand" href="#">|</a> </li>
+            <li><a class="nav-link" href="consultaGrupos.jsp">Crear Votación</a></li>                
+            <li><a class="navbar-brand" href="#">|</a></li>
+            <li><a class="nav-link" href="mostarUsuarios.jsp">Generar Reporte</a> </li>                
+            <li><a class="navbar-brand" href="#">|</a> </li>
+            <li><a class="nav-link" href="mostarUsuarios.jsp">Agregar Usuarios</a> </li>                
+            <li><a class="navbar-brand" href="#">|</a> </li>
+            <li><a class="nav-link" href="index.jsp">Salir</a></li>                
+        </ul>          
+    </div>
+</header>
