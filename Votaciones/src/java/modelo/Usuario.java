@@ -15,6 +15,7 @@ public class Usuario {
     private String apellido1;
     private String apellido2;
     private String clave;
+    private int activo;
 
     public String getCedula() {
         return cedula;
@@ -54,5 +55,13 @@ public class Usuario {
 
     public void setClave(String clave) {
         this.clave = clave;
+    }
+
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 }
