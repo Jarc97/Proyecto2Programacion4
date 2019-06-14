@@ -14,7 +14,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String cedula, String apellido1, String apellido2, String nombre, String clave, boolean activo) {
+    public Usuario(String cedula, String apellido1, String apellido2, String nombre, String clave, int activo) {
         this.cedula = cedula;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -63,11 +63,11 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public boolean isActivo() {
+    public int getActivo() {
         return activo;
     }
 
-    public void setActivo(boolean activo) {
+    public void setActivo(int activo) {
         this.activo = activo;
     }    
 
@@ -81,5 +81,5 @@ public class Usuario {
     private String apellido2;
     private String nombre;
     private String clave;
-    private boolean activo;    
+    private int activo;    
 }
