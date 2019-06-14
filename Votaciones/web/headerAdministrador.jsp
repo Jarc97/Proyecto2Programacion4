@@ -17,7 +17,7 @@
             <li><a class="navbar-brand" href="#">|</a></li>
             <li><a class="nav-link" href="mostarUsuarios.jsp">Generar Reporte</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>
-            <li><a class="nav-link" href="mostarUsuarios.jsp">Agregar Usuarios</a> </li>                
+            <li><a class="nav-link" href="cargarUsuarios.jsp">Agregar Usuarios</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>
             <li><a class="nav-link" href="index.jsp">Salir</a></li>                
         </ul>          

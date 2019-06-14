@@ -7,11 +7,11 @@
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries>
                 <library dirs="200">
-                    <file>${file.reference.mysql-connector-java-8.0.15.jar-1}</file>
+                    <file>${reference.simpleDBLib.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${reference.simpleDBLib-1.jar}</file>
+                    <file>${file.reference.mysql-connector-java-8.0.15.jar-1}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
@@ -25,7 +25,7 @@
         </data>
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
             <reference>
-                <foreign-project>simpleDBLib-1</foreign-project>
+                <foreign-project>simpleDBLib</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
                 <target>jar</target>

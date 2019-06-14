@@ -61,7 +61,7 @@ public class GestorVotaciones {
             ResultSet rs1 = stm1.executeQuery(CMD_SELECT_ID_VOT);
             Statement stm2 = cnx.createStatement();
             ResultSet rs2 = stm2.executeQuery(CMD_SELECT_CED_USUARIOS);
-            
+            rs1.next();
             while (rs2.next()) {                
                 stm.clearParameters();
                 stm.setInt(1, rs1.getInt("id"));
