@@ -23,7 +23,7 @@
                 <div class="fadeIn first">
                     <img src="img/logoUsua.jpg" alt="LogoUsuario">
                 </div>
-                <form name="loginForm" action="principalUsuario.jsp" method="POST">
+                <form name="loginForm" action="principalAdministrador.jsp" method="POST">
                     <input type="text" name="usuario" placeholder="Cedula" autocomplete="off">
                     <input type="password" name="password" placeholder="Contraseña">
                     <input type="submit" value="Ingresar">
