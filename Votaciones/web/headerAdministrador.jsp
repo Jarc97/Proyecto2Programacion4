@@ -11,9 +11,9 @@
             <li><a class="navbar-brand"><img src="img/logoDoge.png" alt="LogoDoge" height="30" width="30"></a></li>
             <li><a class="nav-link" href="principalAdministrador.jsp">Inicio</a> </li>
             <li><a class="navbar-brand" href="#">|</a> </li>
-            <li><a class="nav-link" href="formacionGrupo.jsp">Registrar Partidos</a></li>
+            <li><a class="nav-link" href="registrarPartidos.jsp">Registrar Partidos</a></li>
             <li><a class="navbar-brand" href="#">|</a> </li>
-            <li><a class="nav-link" href="consultaGrupos.jsp">Crear Votación</a></li>                
+            <li><a class="nav-link" href="crearVotacion.jsp">Crear Votación</a></li>                
             <li><a class="navbar-brand" href="#">|</a></li>
             <li><a class="nav-link" href="mostarUsuarios.jsp">Generar Reporte</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>

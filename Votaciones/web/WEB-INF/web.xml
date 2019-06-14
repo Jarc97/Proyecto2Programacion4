@@ -4,9 +4,25 @@
         <servlet-name>ServicioCargarUsuarios</servlet-name>
         <servlet-class>servicios.ServicioCargarUsuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioAgregarPartido</servlet-name>
+        <servlet-class>servicios.ServicioAgregarPartido</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioCrearVotacion</servlet-name>
+        <servlet-class>servicios.ServicioCrearVotacion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioCargarUsuarios</servlet-name>
         <url-pattern>/ServicioCargarUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioAgregarPartido</servlet-name>
+        <url-pattern>/ServicioAgregarPartido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioCrearVotacion</servlet-name>
+        <url-pattern>/ServicioCrearVotacion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

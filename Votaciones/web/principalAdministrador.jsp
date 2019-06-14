@@ -15,7 +15,7 @@
     <body>
         <jsp:directive.include file="headerAdministrador.jsp" />        
         <div id = "wrapper">
-            <h1>Bienvenido al sistema de administración de votaciones</h1>
+            <h1>Bienvenido al sistema de administración de votaciones.</h1>
         </div>        
         <jsp:directive.include file="footer.jsp" />   
     </body>
