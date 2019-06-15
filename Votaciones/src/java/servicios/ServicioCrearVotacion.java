@@ -85,6 +85,7 @@ public class ServicioCrearVotacion extends HttpServlet {
             } else {
                 System.out.println("La hora o la fecha de inicial es mayor a la hora de apertura");
             }
+            response.sendRedirect("principalAdministrador.jsp");
         }
     }
 

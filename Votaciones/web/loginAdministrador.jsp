@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 07/06/2019, 01:51:06 PM
+    Document   : loginAdministrador
+    Created on : 14/06/2019, 05:42:27 PM
     Author     : Feli
 --%>
 
@@ -11,9 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
-        <title>Sistema de Votaciones</title>
+        <title>Login</title>
     </head>
-    <body>      
+    <body>
         <%
             HttpSession sesionActual;
             sesionActual = request.getSession(true);
@@ -23,20 +23,11 @@
                 <div class="fadeIn first">
                     <img src="img/logoUsua.jpg" alt="LogoUsuario">
                 </div>
-                <form name="loginForm" action="ServicioLogin" method="POST">
-                    <h3>Usuario </h3>
-                    <input type="text" name="usuario" placeholder="Cedula" autocomplete="off">
+                <form name="loginForm" action="ServicioLoginAdmin" method="post">
+                    <h3>Administrador</h3>
+                    <input type="text" name="usuario" placeholder="Nombre de usuario" autocomplete="off">
                     <input type="password" name="clave" placeholder="Contraseña">
-                    <table>
-                        <tr>
-                            <input type="submit" value="Ingresar">
-                        </tr>
-                        <tr>
-                            <a href="loginAdministrador.jsp">
-                                <input type="button" value="Admin">
-                            </a>
-                        </tr>
-                    </table>
+                    <input type="submit" value="Ingresar">
                 </form>
             </div>
         </div>

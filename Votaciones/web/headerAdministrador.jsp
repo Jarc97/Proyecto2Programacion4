@@ -19,7 +19,9 @@
             <li><a class="navbar-brand" href="#">|</a> </li>
             <li><a class="nav-link" href="cargarUsuarios.jsp">Agregar Usuarios</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>
-            <li><a class="nav-link" href="index.jsp">Salir</a></li>                
+            <li><a class="nav-link" href="agregarAdministrador.jsp">Agregar Administrador</a> </li>                
+            <li><a class="navbar-brand" href="#">|</a> </li>
+            <li><a class="nav-link" href="ServicioLogout">Salir</a></li>                
         </ul>          
     </div>
 </header>

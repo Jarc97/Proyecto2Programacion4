@@ -5,7 +5,7 @@
  */
 package servicios;
 
-import control.GestorCargaUsuarios;
+import control.GestorUsuarios;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,8 +41,8 @@ public class ServicioCargarUsuarios extends HttpServlet {
                 
                 String xmlStr = new Scanner(part.getInputStream()).useDelimiter("\\A").next();
                 
-                GestorCargaUsuarios gcu = GestorCargaUsuarios.obtenerInstancia();
-                gcu.interpretar(xmlStr);
+                GestorUsuarios gu = GestorUsuarios.obtenerInstancia();
+                gu.interpretar(xmlStr);
                 
                 if (nombreArchivo.isEmpty()) {
                     request.setAttribute("mensaje",
@@ -71,7 +71,7 @@ public class ServicioCargarUsuarios extends HttpServlet {
                     String.format("Ocurrió una excepción: '%s'", ex.getMessage()));
         }
 
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/principalAdministrador.jsp").forward(request, response);
 
     }
 
