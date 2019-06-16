@@ -40,7 +40,7 @@ public class ServicioVerVotaciones extends HttpServlet {
         try {
 //            listaDisponibles = GestorVotaciones.obtenerInstancia().mostrarVotacionesDisponibles(sesionActual);
             
-            String id = (String) request.getAttribute("idvotacion");
+            String id = (String) request.getParameter("id");
             sesionActual.setAttribute("id", id);
             System.out.println(id);
 //            sesionActual = request.getSession();

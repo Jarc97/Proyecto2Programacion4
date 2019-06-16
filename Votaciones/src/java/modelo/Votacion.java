@@ -110,7 +110,7 @@ public class Votacion {
         strb.append("<td>");
         strb.append(String.format(FORMATO_BTN_VOTAR, id));
         strb.append("</td>");      
-        strb.append("</td>");
+        strb.append("</tr>");
         return strb.toString();
     }
 
@@ -121,5 +121,5 @@ public class Votacion {
     private Timestamp fecha_final;
     private int estado;
     SimpleDateFormat formato = new SimpleDateFormat("HH:mm dd/MM/yyyy");
-    private static final String FORMATO_BTN_VOTAR = "<form action=\"ServicioVotar\"><input type=\"hidden\" name=\"id\" value=\"%d\"><input type=\"submit\" name=\"idvotacion\" value=\"Votar aqui\"></form>";
+    private static final String FORMATO_BTN_VOTAR = "<form action=\"ServicioVerVotaciones\" method=\"POST\"><input type=\"hidden\" name=\"id\" value=\"%d\"><input type=\"submit\" name=\"idvotacion\" value=\"Votar aqui\"></form>";
 }
