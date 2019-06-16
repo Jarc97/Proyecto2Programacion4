@@ -37,13 +37,22 @@ public class ServicioAgregarPartido extends HttpServlet {
             String siglas = request.getParameter("siglas");
             String observaciones = request.getParameter("observaciones");
             Part filePart = request.getPart("bandera");
+            String cedulaCandidato = request.getParameter("cedulaCandidato");
+            Part fotoCandidato = request.getPart("foto");
+            
             InputStream in = null;
+            InputStream in2 = null;
             
             if (filePart != null) {
                 System.out.println(filePart.getName());
                 System.out.println(filePart.getSize());
                 System.out.println(filePart.getContentType());
                 in = filePart.getInputStream();
+                
+                System.out.println(fotoCandidato.getName());
+                System.out.println(fotoCandidato.getSize());
+                System.out.println(fotoCandidato.getContentType());
+                in2 = filePart.getInputStream();
             }            
             
             GestorPartidos g1 = GestorPartidos.obtenerInstancia();
@@ -51,13 +60,29 @@ public class ServicioAgregarPartido extends HttpServlet {
             GestorPartidos.siglas = siglas;
             GestorPartidos.observaciones = observaciones;            
             GestorPartidos.bandera = in;
+            GestorPartidos.cedulaCandidato = cedulaCandidato;
+            GestorPartidos.fotoCandidato = in2;
             g1.crearPartido();                      
                      
             System.out.println(nombre);
             System.out.println(siglas);
-            System.out.println(observaciones);            
+            System.out.println(observaciones);
             
-            response.sendRedirect("principalAdministrador.jsp");
+            boolean partidoValido = false;
+            
+            try {
+                partidoValido = GestorPartidos.obtenerInstancia().validarCandidato(cedulaCandidato);
+                
+                GestorPartidos.obtenerInstancia().insertarVotacionPartido();
+            } catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex) {
+                System.err.println(ex.getMessage());
+            }
+
+            if (partidoValido) {
+                response.sendRedirect("principalAdministrador.jsp");
+            } else {
+                response.sendRedirect("registrarPartidos.jsp?error=1");
+            }
         }
     }
 

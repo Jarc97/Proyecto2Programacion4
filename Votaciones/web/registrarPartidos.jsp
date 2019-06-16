@@ -4,6 +4,7 @@
     Author     : Feli
 --%>
 
+<%@page import="control.GestorPartidos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,8 +37,35 @@
                             <td>Bandera</td><td><input type="file" name="bandera"/></td>
                         </tr>
                         <tr>
+                            <td>Cedula Candidato</td><td><input type="text" autocomplete="off" placeholder="Cedula Candidato" name="cedulaCandidato"/></td>
+                        </tr>
+                        <tr>
+                            <td>Foto Candidato</td><td><input type="file" name="foto"/></td>
+                        </tr>
+                        <tr>
                             <td></td><td><input type="submit"></td>
                         </tr>
+                        <div id = "error">
+                            <p>
+                                <span style="color:red">
+                                    <% int codError = 0;
+                                        String mensaje = "";
+                                        try {
+                                            codError = Integer.parseInt(request.getParameter("error"));
+                                        } catch (Exception e) {
+                                        }
+                                        switch (codError) {
+                                            case 1:
+                                                mensaje = "No existe un usuario con esa cédula";
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                        out.println(mensaje);
+                                    %>
+                                </span>
+                            </p>
+                        </div>
                     </table>
                 </form>     
             </div>
