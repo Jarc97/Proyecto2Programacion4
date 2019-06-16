@@ -31,41 +31,33 @@
             <h1>
                 Por favor seleccione el partido.
             </h1>
-            <div id="countdown"></div>
+            <div id="tiempo"></div>
             <script>
-                var end = new Date('12/17/2100 9:30 AM');
+                function startTimer(duration, display) {
+                    var timer = duration, minutes, seconds;
+                    setInterval(function () {
+                        minutes = parseInt(timer / 60, 10);
+                        seconds = parseInt(timer % 60, 10);
 
-                var _second = 1000;
-                var _minute = _second * 60;
-                var _hour = _minute * 60;
-                var _day = _hour * 24;
-                var timer;
+                        minutes = minutes < 10 ? "0" + minutes : minutes;
+                        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                function showRemaining() {
-                    var now = new Date();
-                    var distance = end - now;
-                    if (distance < 0) {
+                        display.textContent = minutes + ":" + seconds;
 
-                        clearInterval(timer);
-                        document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
-                        return;
-                    }
-                    var days = Math.floor(distance / _day);
-                    var hours = Math.floor((distance % _day) / _hour);
-                    var minutes = Math.floor((distance % _hour) / _minute);
-                    var seconds = Math.floor((distance % _minute) / _second);
-
-                    document.getElementById('countdown').innerHTML = days + ' dias, ';
-                    document.getElementById('countdown').innerHTML += hours + ' horas, ';
-                    document.getElementById('countdown').innerHTML += minutes + ' minutos y ';
-                    document.getElementById('countdown').innerHTML += seconds + ' segundos';
+                        if (--timer < 0) {
+                            timer = duration;
+                        }
+                    }, 1000);
                 }
 
-                timer = setInterval(showRemaining, 1000);
+            window.onload = function () {
+                var dosMinutos = 60 * 2,
+                    display = document.querySelector('#tiempo');
+                startTimer(dosMinutos, display);
+            };
             </script>
             <div>
-                <%= gv.mostrarVotacionesDisponibles(sesionActual)%>
+                
             </div>
         </div>
         <jsp:directive.include file="footer.jsp" />
