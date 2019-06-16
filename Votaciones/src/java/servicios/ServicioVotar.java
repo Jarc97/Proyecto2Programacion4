@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// ServicioVotar.java
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria 
 package servicios;
 
 import control.GestorUsuarios;
@@ -52,12 +55,21 @@ public class ServicioVotar extends HttpServlet {
         String listaDisponibles;
             try {
             listaDisponibles = GestorVotaciones.obtenerInstancia().mostrarVotacionesDisponibles(sesionActual);
+            if(GestorVotaciones.obtenerInstancia().validarEstadoVotar(sesionActual) == 1){
+                //Aqui va el metodo de votar                 
+                
+                //======================
+                //Para cambiar el estado del usuario en la votacion.
+                GestorVotaciones.obtenerInstancia().cambiarEstadoVotar(sesionActual);
+            }else{
+                response.sendRedirect("principalUsuario.jsp?error=2");
+            }
             
         } catch (Exception e) {
                 System.out.println(e.getMessage());
         }
 
-            response.sendRedirect("paginaVotacion.jsp");
+            response.sendRedirect("principalUsuario.jsp");
 //        }
     }
 

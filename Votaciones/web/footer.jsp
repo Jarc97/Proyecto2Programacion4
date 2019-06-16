@@ -1,8 +1,14 @@
 <%-- 
-    Document   : footer
-    Created on : 07/06/2019, 01:54:21 PM
-    Author     : Feli
---%>
+// footer.jsp  
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria
+// 
+// --%> 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

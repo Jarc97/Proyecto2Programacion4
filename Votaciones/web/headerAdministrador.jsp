@@ -1,8 +1,4 @@
-<%-- 
-    Document   : headerAdministrador
-    Created on : 07/06/2019, 01:54:41 PM
-    Author     : Feli
---%>
+
 
 <link href="css/headerAdministrador.css" rel="stylesheet" type="text/css"/>
 <header >      

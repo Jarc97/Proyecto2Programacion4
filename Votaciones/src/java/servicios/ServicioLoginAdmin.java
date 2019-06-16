@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+// ServicioLoginAdmin.java
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria 
 package servicios;
 
 import control.GestorAdministradores;   

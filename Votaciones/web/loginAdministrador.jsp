@@ -1,8 +1,14 @@
 <%-- 
-    Document   : loginAdministrador
-    Created on : 14/06/2019, 05:42:27 PM
-    Author     : Feli
---%>
+// loginAdministrador.jsp  
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria
+// 
+// --%> 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

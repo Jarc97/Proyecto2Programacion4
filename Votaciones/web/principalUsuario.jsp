@@ -1,8 +1,15 @@
-<%--
-    Document   : principalUsuario
-    Created on : 07/06/2019, 05:05:27 PM
-    Author     : Feli
---%>
+<%-- 
+// principalUsuario.jsp  
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria
+// 
+// --%> 
+
 
 <%@page import="control.GestorVotaciones"%>
 <%@page import="control.GestorUsuarios"%>
@@ -48,7 +55,7 @@
 
                 </table>
                 <div>               
-            </div>
+                </div>
                 <div id = "error">
                     <p>
                         <span style="color:red">
@@ -60,7 +67,10 @@
                                 }
                                 switch (codError) {
                                     case 1:
-                                        mensaje = "No ha cambiado la clave";
+                                        mensaje = "No ha cambiado la clave.";
+                                        break;
+                                    case 2:
+                                        mensaje = "Ya participó en esa votacion.";
                                         break;
                                     default:
                                         break;

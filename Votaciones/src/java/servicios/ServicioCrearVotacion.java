@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+// ServicioCrearVotacion.java
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria 
 package servicios;
 
 import control.GestorVotaciones;
@@ -73,8 +77,12 @@ public class ServicioCrearVotacion extends HttpServlet {
                         gv.finicio = fechaI;
                         gv.fapertura = fechaA;
                         gv.fcierre = fechaC;
-                        gv.ffinal = fechaF;
+                        gv.ffinal = fechaF;                        
                         gv.crearVotacion();
+                        int id = gv.buscarId(fechaI, fechaA, fechaC);
+                        System.out.println(id);
+                        gv.insertarVotacionUsuario();
+                        gv.cambiarOtrasVotaciones(id);
                         
                     } else {
                         System.out.println("La hora o la fecha de cierre es mayor a la hora final");

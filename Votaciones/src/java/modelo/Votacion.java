@@ -1,18 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+// Votacion.java
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria 
 package modelo;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
-/**
- *
- * @author Feli
- */
+
 public class Votacion {
 
     public Votacion() {
@@ -85,6 +86,13 @@ public class Votacion {
                 : "<span style=\"color:green;\"><strong>Activo</strong></span>";        
         return activo;
     }
+    
+    public String desahabBtn(int estado){
+    String btn;
+    btn = (estado != 1) ? FORMATO_BTN_DES : FORMATO_BTN_VOTAR;
+        return btn;
+    }
+    
     @Override
     public String toString() {
 //        return "Votacion{" + "id=" + id + ", fecha_inicial=" + fecha_inicial + ", fecha_apertura=" + fecha_apertura + ", fecha_cierre=" + fecha_cierre + ", fecha_final=" + fecha_final + '}';
@@ -108,7 +116,7 @@ public class Votacion {
         strb.append(estaActivo(estado));
         strb.append("</td>");
         strb.append("<td>");
-        strb.append(String.format(FORMATO_BTN_VOTAR, id));
+        strb.append(String.format(desahabBtn(estado), id));
         strb.append("</td>");      
         strb.append("</tr>");
         return strb.toString();
@@ -121,5 +129,8 @@ public class Votacion {
     private Timestamp fecha_final;
     private int estado;
     SimpleDateFormat formato = new SimpleDateFormat("HH:mm dd/MM/yyyy");
-    private static final String FORMATO_BTN_VOTAR = "<form action=\"ServicioVerVotaciones\" method=\"POST\"><input type=\"hidden\" name=\"id\" value=\"%d\"><input type=\"submit\" name=\"idvotacion\" value=\"Votar aqui\"></form>";
+    private static final String FORMATO_BTN_VOTAR = "<form action=\"ServicioVerVotaciones\" method=\"POST\"><"
+            + "input type=\"hidden\" name=\"id\" value=\"%d\"><input type=\"submit\" name=\"idvotacion\" value=\"Votar aqui\"></form>";
+    private static final String FORMATO_BTN_DES = "<form action=\"ServicioVerVotaciones\" method=\"POST\"><"
+            + "input type=\"hidden\" name=\"id\" value=\"%d\"><input disabled type=\"submit\" name=\"idvotacion\" value=\"No disponible\"></form>";
 }

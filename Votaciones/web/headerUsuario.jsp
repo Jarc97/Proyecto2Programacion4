@@ -1,9 +1,3 @@
-<%-- 
-    Document   : headerUsuario
-    Created on : 07/06/2019, 01:54:54 PM
-    Author     : Feli
---%>
-
 <link href="css/headerUsuario.css" rel="stylesheet" type="text/css"/>
 <header >      
     <div class="headerNavbar">        
