@@ -23,7 +23,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var dosMinutos = 60 * 0.125,//aqui se define el tiempo antes de la redireccion 
+    var dosMinutos = 60 * 2;//aqui se define el tiempo antes de la redireccion 
             display = document.querySelector('#tiempo');
     startTimer(dosMinutos, display);
 };

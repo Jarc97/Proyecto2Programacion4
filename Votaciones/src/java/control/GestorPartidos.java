@@ -13,8 +13,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.servlet.http.HttpSession;
+import modelo.Partido;
+import modelo.Votacion;
 
 /**
  *
@@ -106,6 +112,79 @@ public class GestorPartidos {
         }
         return 0;
     }
+    
+    public List<Partido> listarPartidosDisponibles(HttpSession session) {
+        List<Partido> partidos = new ArrayList<>();
+        Object objetoU = session.getAttribute("id");
+        String idVotacion = objetoU.toString();
+        String formattedQuery = String.format(CMD_LISTAR_PARTIDOS_DISPONIBLES, Integer.valueOf(idVotacion));
+        
+        try (
+                Connection cnx = bd.getConnection(BASE_DATOS, USUARIO_BD, CLAVE_BD);
+                Statement stm = cnx.createStatement();
+                ResultSet rs = stm.executeQuery(formattedQuery)) {
+
+            while (rs.next()) {
+                String partido_siglas = rs.getString("partido_siglas");
+                Partido partido = new Partido(null, partido_siglas, null, null);
+                partidos.add(partido);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return partidos;
+    }
+    
+    public String mostrarPartidosDisponibles(HttpSession session) {
+        List<Partido> registros = listarPartidosDisponibles(session);
+        StringBuilder strb = new StringBuilder();
+        ListIterator<Partido> r = registros.listIterator();
+        strb.append("<table class=\"tablaVot\">\n");
+        strb.append("\t<tr>\n");
+        strb.append("<th>Siglas</th>");
+        strb.append("<th>Votar</th>");
+        strb.append("</tr>");
+        while (r.hasNext()) {
+            strb.append(String.format("%s", r.next().toString()));
+        }
+        strb.append("</table>");
+        return strb.toString();
+    }
+    
+    public void voto(String idVotacion, String siglaPartido) {
+        
+        int votos_obtenidos = this.buscarVotosObtenidos(idVotacion, siglaPartido);
+        
+        String formattedQuery = String.format(CMD_VOTAR, votos_obtenidos, Integer.valueOf(idVotacion), siglaPartido);
+        
+        try (
+                Connection cnx = bd.getConnection(BASE_DATOS, USUARIO_BD, CLAVE_BD);
+                Statement stm = cnx.createStatement();
+                ) {
+            stm.executeUpdate(formattedQuery);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public int buscarVotosObtenidos(String idVotacion, String siglaPartido) {
+        String formattedQuery = String.format(CMD_BUSCAR_VOTOS_OBTENIDOS, Integer.valueOf(idVotacion), siglaPartido);
+        int votos_obtenidos = 0;
+        
+        try (
+                Connection cnx = bd.getConnection(BASE_DATOS, USUARIO_BD, CLAVE_BD);
+                Statement stm = cnx.createStatement();
+                ResultSet rs = stm.executeQuery(formattedQuery)) {
+
+            while (rs.next()) {
+                votos_obtenidos = rs.getInt("votos_obtenidos");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return votos_obtenidos + 1;
+    }
 
     public static boolean validate(final String fileName) {
         Matcher matcher = PATTERN.matcher(fileName);
@@ -132,4 +211,8 @@ public class GestorPartidos {
     private static final String CMD_AGREGAR_VOTACION_PARTIDO = "insert into bd_votaciones.votacion_partido (votacion_id, partido_siglas, cedula_candidato, foto_candidato, votos_obtenidos) values (?,?,?,?,?);";
     private static final String CMD_BUSCAR_ID_VOTACION_ACTIVA = "select id from votacion where estado = 1;";
     private static final String CMD_BUSCAR_CEDULA = "select cedula from usuario where cedula = '%s';";
+    private static final String CMD_LISTAR_PARTIDOS_DISPONIBLES = "select * from votacion_partido where votacion_id = %d";
+    
+    private static final String CMD_BUSCAR_VOTOS_OBTENIDOS = "select votos_obtenidos from votacion_partido where votacion_id = %d and partido_siglas = '%s';";
+    private static final String CMD_VOTAR = "update votacion_partido set votos_obtenidos = %d where votacion_id = %d and partido_siglas = '%s';";
 }

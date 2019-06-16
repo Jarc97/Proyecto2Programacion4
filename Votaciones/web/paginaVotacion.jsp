@@ -4,7 +4,7 @@
     Author     : Feli
 --%>
 
-<%@page import="control.GestorVotaciones"%>
+<%@page import="control.GestorPartidos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
     </head>
     <body>
         <%
-            GestorVotaciones gv = GestorVotaciones.obtenerInstancia();
+            GestorPartidos gp = GestorPartidos.obtenerInstancia();
             HttpSession sesionActual = request.getSession();
             String id = null;
             if (sesionActual.getAttribute("usuario") != null) {
@@ -40,7 +40,7 @@
             <a id="tiempo"></a> 
             </p>           
             <div id = "votacion">
-                
+                <%= gp.mostrarPartidosDisponibles(session) %>
             </div>
         </div>
         <jsp:directive.include file="footer.jsp" />

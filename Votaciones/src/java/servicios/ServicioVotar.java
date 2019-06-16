@@ -5,6 +5,7 @@
  */
 package servicios;
 
+import control.GestorPartidos;
 import control.GestorUsuarios;
 import control.GestorVotaciones;
 import java.io.IOException;
@@ -41,23 +42,14 @@ public class ServicioVotar extends HttpServlet {
        response.setHeader("cache-control", "no-cache, no-store, must-revalidate");
 
             HttpSession sesionActual = request.getSession();
+            String idvotacion = (String) sesionActual.getAttribute("id");
             
-            String idvotacion = (String) sesionActual.getAttribute("idvotacion");
-            sesionActual.setAttribute("idvotacion", idvotacion);
-        
-            System.out.println(idvotacion);
+            String siglaPartido = request.getParameter("id");
             
-         String usuario = (String) sesionActual.getAttribute("usuario");
-        System.out.println("usuario en servicio votar:"+usuario);
-        String listaDisponibles;
-            try {
-            listaDisponibles = GestorVotaciones.obtenerInstancia().mostrarVotacionesDisponibles(sesionActual);
-            
-        } catch (Exception e) {
-                System.out.println(e.getMessage());
-        }
+            GestorPartidos gp = GestorPartidos.obtenerInstancia();
+            gp.voto(idvotacion, siglaPartido);
 
-            response.sendRedirect("paginaVotacion.jsp");
+            response.sendRedirect("principalUsuario.jsp");
 //        }
     }
 
