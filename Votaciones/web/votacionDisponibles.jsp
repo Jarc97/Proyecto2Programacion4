@@ -4,6 +4,7 @@
     Author     : Feli
 --%>
 
+<%@page import="control.GestorUsuarios"%>
 <%@page import="control.GestorVotaciones"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,31 +13,31 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <link href="css/tabla.css" rel="stylesheet" type="text/css"/>
-        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>JSP Page</title>
     </head>
     <body>
         <%
-            GestorVotaciones ge = GestorVotaciones.obtenerInstancia();
+           GestorVotaciones gv = GestorVotaciones.obtenerInstancia();
             HttpSession sesionActual = request.getSession();
-            long transcurrido = System.currentTimeMillis() - sesionActual.getLastAccessedTime();
-            String id = "";
+            String id = null;
+            if (sesionActual.getAttribute("usuario") != null) {
+                id = sesionActual.getAttribute("usuario").toString();
 
-            if (transcurrido > (1000 * 60 * 5)) {
-                request.getRequestDispatcher("errorLogin.jsp?error=1").forward(request, response);
-            }         
-
+            } else {
+                request.getRequestDispatcher("errorLogin.jsp").forward(request, response);
+            }              
         %>
         <jsp:directive.include file="headerUsuario.jsp" />
         <div id = "wrapper">
+            <h1>
+                Por favor seleccione la votacion en la que desea participar.
+            </h1>
             <h3>
-                Para votar debe cambiar su contraseña por defecto.
                 Tenga en cuenta que dispone de dos minutos para votar.
             </h3>
             <div>
-                <%=
-                    ge.mostrarVotacionesDisponibles(sesionActual)
-                %>
+                <%= gv.mostrarVotacionesDisponibles(sesionActual)
+               %>
             </div>
         </div>
         <jsp:directive.include file="footer.jsp" />

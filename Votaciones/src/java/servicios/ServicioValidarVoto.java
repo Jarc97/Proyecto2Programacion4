@@ -5,11 +5,9 @@
  */
 package servicios;
 
-import control.GestorUsuarios;
 import control.GestorVotaciones;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.logging.Level;
@@ -24,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Feli
  */
-public class ServicioVotar extends HttpServlet {
+public class ServicioValidarVoto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,29 +34,43 @@ public class ServicioVotar extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException, InstantiationException, ClassNotFoundException, IllegalAccessException {
+            throws ServletException, IOException, SQLException { 
         response.setContentType("text/html;charset=UTF-8");
-       response.setHeader("cache-control", "no-cache, no-store, must-revalidate");
-
-            HttpSession sesionActual = request.getSession();
-            
-            String idvotacion = (String) sesionActual.getAttribute("idvotacion");
-            sesionActual.setAttribute("idvotacion", idvotacion);
+        response.setHeader("cache-control", "no-cache, no-store, must-revalidate");
         
-            System.out.println(idvotacion);
-            
+        HttpSession sesionActual = request.getSession();
          String usuario = (String) sesionActual.getAttribute("usuario");
-        System.out.println("usuario en servicio votar:"+usuario);
-        String listaDisponibles;
-            try {
-            listaDisponibles = GestorVotaciones.obtenerInstancia().mostrarVotacionesDisponibles(sesionActual);
+        boolean usuarioValido = false;
+//        String usuario = (String) request.getAttribute("usuario");
+        System.out.println("usuario1: "+usuario);  
+        
+        
+//        Enumeration keys = sesionActual.getAttributeNames();
+//while (keys.hasMoreElements())
+//{
+//  String key = (String)keys.nextElement();
+//  System.out.println(key + ": " + sesionActual.getValue(key) + "<br>");
+//}
+        try {
+            usuarioValido = GestorVotaciones.obtenerInstancia().validarClaveCambio(sesionActual);
+            //GestorVotaciones.obtenerInstancia().mostrarVotacionesDisponibles(sesionActual);
             
-        } catch (Exception e) {
-                System.out.println(e.getMessage());
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex) {
+            System.err.println(ex.getMessage());
         }
 
-            response.sendRedirect("paginaVotacion.jsp");
-//        }
+        if (usuarioValido) {      
+            //HttpSession sesion = request.getSession();
+            //sesion.setAttribute("usuario", usuario);
+//            System.out.println("SESION:"+sesion.getId());
+//            sesion.setMaxInactiveInterval(60 * 3);
+            
+            System.out.println("Puede votar");
+//            request.getRequestDispatcher("votacionDisponibles.jsp").forward(request, response);
+           response.sendRedirect("votacionDisponibles.jsp");
+        } else {
+            response.sendRedirect("principalUsuario.jsp?error=1");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -76,13 +88,7 @@ public class ServicioVotar extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServicioValidarVoto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -100,13 +106,7 @@ public class ServicioVotar extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ServicioVotar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServicioValidarVoto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

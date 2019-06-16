@@ -12,22 +12,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
-        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>Inicio</title>
     </head>
     <body>
         <%
-
             GestorUsuarios ge = GestorUsuarios.obtenerInstancia();
-            GestorVotaciones gv = GestorVotaciones.obtenerInstancia();
             HttpSession sesionActual = request.getSession();
-            long transcurrido = System.currentTimeMillis() - sesionActual.getLastAccessedTime();
-            String id = "";
-
-            if (transcurrido > (1000 * 60 * 5)) {
-                request.getRequestDispatcher("errorLogin.jsp?error=1").forward(request, response);
-            }
-
+            String id = (String) sesionActual.getAttribute("usuario");
             if (sesionActual.getAttribute("usuario") != null) {
                 id = sesionActual.getAttribute("usuario").toString();
 
@@ -37,20 +28,19 @@
         %>
         <jsp:directive.include file="headerUsuario.jsp" />
         <div id = "wrapper">
-            <h1>Bienvenido al sistema de votacion, <%= ge.obtenerNombre(session)%></h1>
+            <h1>Bienvenido al sistema de votacion, <%= ge.obtenerNombre(sesionActual)%></h1>
             <h3>
                 Para votar debe cambiar su contraseña por defecto.
-                Tenga en cuenta que dispone de dos minutos para votar.
             </h3>
             <div class = "form">
                 <table>
                     <td>
-                        <form action="cambiarClave.jsp" method ="GET">
+                        <form action="cambiarClave.jsp" method ="post">
                             <input type="submit" value="Cambiar Clave"/>
                         </form>
                     </td>
                     <td>
-                        <form action="ServicioVotar" method ="GET">
+                        <form action="ServicioValidarVoto" method ="post">
                             <input type="submit" value="Votar"/>
                         </form>
                     </td>

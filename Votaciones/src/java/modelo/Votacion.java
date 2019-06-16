@@ -6,6 +6,7 @@
 package modelo;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 /**
@@ -17,7 +18,7 @@ public class Votacion {
     public Votacion() {
     }
 
-    public Votacion(int id, Date fecha_inicial, Date fecha_apertura, Date fecha_cierre, Date fecha_final, int estado) {
+    public Votacion(int id, Timestamp fecha_inicial, Timestamp fecha_apertura, Timestamp fecha_cierre, Timestamp fecha_final, int estado) {
         this.id = id;
         this.fecha_inicial = fecha_inicial;
         this.fecha_apertura = fecha_apertura;
@@ -25,8 +26,6 @@ public class Votacion {
         this.fecha_final = fecha_final;
         this.estado = estado;
     }
-
-
 
     public int getId() {
         return id;
@@ -36,35 +35,35 @@ public class Votacion {
         this.id = id;
     }
 
-    public Date getFecha_inicial() {
+    public Timestamp getFecha_inicial() {
         return fecha_inicial;
     }
 
-    public void setFecha_inicial(Date fecha_inicial) {
+    public void setFecha_inicial(Timestamp fecha_inicial) {
         this.fecha_inicial = fecha_inicial;
     }
 
-    public Date getFecha_apertura() {
+    public Timestamp getFecha_apertura() {
         return fecha_apertura;
     }
 
-    public void setFecha_apertura(Date fecha_apertura) {
+    public void setFecha_apertura(Timestamp fecha_apertura) {
         this.fecha_apertura = fecha_apertura;
     }
 
-    public Date getFecha_cierre() {
+    public Timestamp getFecha_cierre() {
         return fecha_cierre;
     }
 
-    public void setFecha_cierre(Date fecha_cierre) {
+    public void setFecha_cierre(Timestamp fecha_cierre) {
         this.fecha_cierre = fecha_cierre;
     }
 
-    public Date getFecha_final() {
+    public Timestamp getFecha_final() {
         return fecha_final;
     }
 
-    public void setFecha_final(Date fecha_final) {
+    public void setFecha_final(Timestamp fecha_final) {
         this.fecha_final = fecha_final;
     }
 
@@ -76,7 +75,7 @@ public class Votacion {
         this.estado = estado;
     }
     
-    public String dateToString(Date fecha) {
+    public String dateToString(Timestamp fecha) {
         String fechaS = formato.format(fecha);
         return fechaS;
     }
@@ -109,18 +108,18 @@ public class Votacion {
         strb.append(estaActivo(estado));
         strb.append("</td>");
         strb.append("<td>");
-        strb.append(FORMATO_BTN_VOTAR);
-        strb.append("</td>");
+        strb.append(String.format(FORMATO_BTN_VOTAR, id));
+        strb.append("</td>");      
         strb.append("</td>");
         return strb.toString();
     }
 
     private int id;
-    private Date fecha_inicial;
-    private Date fecha_apertura;
-    private Date fecha_cierre;
-    private Date fecha_final;
+    private Timestamp fecha_inicial;
+    private Timestamp fecha_apertura;
+    private Timestamp fecha_cierre;
+    private Timestamp fecha_final;
     private int estado;
-    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    private static final String FORMATO_BTN_VOTAR = "<button name=\"idvotacion\" onclick=\"votacion.jsp\">Votar aqui</button>";
+    SimpleDateFormat formato = new SimpleDateFormat("HH:mm dd/MM/yyyy");
+    private static final String FORMATO_BTN_VOTAR = "<form action=\"ServicioVotar\"><input type=\"hidden\" name=\"id\" value=\"%d\"><input type=\"submit\" name=\"idvotacion\" value=\"Votar aqui\"></form>";
 }

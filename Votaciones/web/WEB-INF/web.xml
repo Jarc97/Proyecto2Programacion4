@@ -36,6 +36,14 @@
         <servlet-name>ServicioVotar</servlet-name>
         <servlet-class>servicios.ServicioVotar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioValidarVoto</servlet-name>
+        <servlet-class>servicios.ServicioValidarVoto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioVerVotaciones</servlet-name>
+        <servlet-class>servicios.ServicioVerVotaciones</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioCargarUsuarios</servlet-name>
         <url-pattern>/ServicioCargarUsuarios</url-pattern>
@@ -71,6 +79,14 @@
     <servlet-mapping>
         <servlet-name>ServicioVotar</servlet-name>
         <url-pattern>/ServicioVotar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioValidarVoto</servlet-name>
+        <url-pattern>/ServicioValidarVoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioVerVotaciones</servlet-name>
+        <url-pattern>/ServicioVerVotaciones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -114,16 +115,16 @@ public class GestorVotaciones {
                  ResultSet rs = stm.executeQuery();
             while (rs.next()) {                
                 int id = rs.getInt("id");
-                Date fecha_inicial = rs.getDate("fecha_inicio");
-                Date fecha_apertura = rs.getDate("fecha_apertura");
-                Date fecha_cierre = rs.getDate("fecha_cierre");
-                Date fecha_final = rs.getDate("fecha_final");
+                Timestamp fecha_inicial = rs.getTimestamp("fecha_inicio");
+                Timestamp fecha_apertura = rs.getTimestamp("fecha_apertura");
+                Timestamp fecha_cierre = rs.getTimestamp("fecha_cierre");
+                Timestamp fecha_final = rs.getTimestamp("fecha_final");
                 int estado = rs.getInt("estado");
                 v.add(new Votacion(id, fecha_inicial, fecha_apertura, fecha_cierre, fecha_final, estado));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }
+        }       
         return v;
         
     }
@@ -148,6 +149,8 @@ public class GestorVotaciones {
         return strb.toString();
     }
     
+    
+    
     private DBManager bd = null;
     private static GestorVotaciones instancia = null;
     private static final String BASE_DATOS = "bd_votaciones";
@@ -163,7 +166,8 @@ public class GestorVotaciones {
     private static final String CMD_SELECT_CED_USUARIOS = "SELECT cedula FROM bd_votaciones.usuario;";
     private static final String CMD_INSERTAR_VOT_USU = "INSERT INTO bd_votaciones.votacion_usuario(votacion_id, usuario_cedula, voto_completado) VALUES(?,?,0);";
     private static final String CMD_VALIDAR_CLAVE_CAMB = "SELECT cedula FROM bd_votaciones.usuario WHERE cedula = ? AND cedula <> clave;";
+    private static final String CMD_VER_VOTACION_ID = "SELECT id FROM bd_votaciones.votacion";
     private static final String CMD_LISTAR_VOT_DISP = "select v.id, v.fecha_inicio, v.fecha_apertura, v.fecha_cierre, v.fecha_final, v.estado\n" +
 "from bd_votaciones.votacion v, bd_votaciones.votacion_usuario vu, bd_votaciones.usuario u \n" +
-"where v.id = vu.votacion_id and vu.usuario_cedula = u.cedula and u.cedula = ? and u.activo = 1;";
+"where vu.usuario_cedula = u.cedula and u.cedula = ? and u.activo = 1;";
 }
