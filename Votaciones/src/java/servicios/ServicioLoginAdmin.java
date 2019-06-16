@@ -44,7 +44,7 @@ public class ServicioLoginAdmin extends HttpServlet {
         if (usuarioValido) {
             HttpSession sesion = request.getSession(true);
             sesion.setAttribute("usuario", usuario);
-            sesion.setMaxInactiveInterval(60 * 3);
+            //sesion.setMaxInactiveInterval(60 * 3);
             System.out.println("Login exitoso");
             response.sendRedirect("principalAdministrador.jsp");
         } else {

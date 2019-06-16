@@ -16,7 +16,6 @@
     </head>
     <body>
         <%
-
             GestorAdministradores ge = GestorAdministradores.obtenerInstancia();
             HttpSession sesionActual = request.getSession();
             long transcurrido = System.currentTimeMillis() - sesionActual.getLastAccessedTime();

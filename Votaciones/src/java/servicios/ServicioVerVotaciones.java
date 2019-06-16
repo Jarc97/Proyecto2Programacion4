@@ -42,7 +42,7 @@ public class ServicioVerVotaciones extends HttpServlet {
             
             String id = (String) request.getParameter("id");
             sesionActual.setAttribute("id", id);
-            System.out.println(id);
+            System.out.println("id de votacion "+id);
 //            sesionActual = request.getSession();
 //            sesionActual.setAttribute("idvotacion", idvotacion);
             

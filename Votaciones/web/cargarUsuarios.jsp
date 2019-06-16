@@ -10,10 +10,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>Cargar Usuarios</title>
     </head>
     <body>
-        <jsp:directive.include file="headerAdministrador.jsp" />        
+        <jsp:directive.include file="headerAdministrador.jsp" />     
+        <%
+            HttpSession sesionActual = request.getSession();
+            String id = (String) sesionActual.getAttribute("usuario");
+            if (sesionActual.getAttribute("usuario") != null) {
+                id = sesionActual.getAttribute("usuario").toString();
+
+            } else {
+                request.getRequestDispatcher("errorLogin.jsp").forward(request, response);
+            }
+        %>
         <div id = "wrapper">
             <div class ="titRegis">
                 <h1>

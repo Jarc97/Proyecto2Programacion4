@@ -15,13 +15,12 @@
             <li><a class="navbar-brand" href="#">|</a> </li>
             <li><a class="nav-link" href="crearVotacion.jsp">Crear Votación</a></li>                
             <li><a class="navbar-brand" href="#">|</a></li>
-            <li><a class="nav-link" href="mostarUsuarios.jsp">Generar Reporte</a> </li>                
+            <li><a class="nav-link" href="reporteVotacion.jsp">Generar Reporte</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>
             <li><a class="nav-link" href="cargarUsuarios.jsp">Agregar Usuarios</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>
             <li><a class="nav-link" href="agregarAdministrador.jsp">Agregar Administrador</a> </li>                
             <li><a class="navbar-brand" href="#">|</a> </li>
             <li><a class="nav-link" href="ServicioLogout">Salir</a></li>                
-        </ul>          
+        </ul>
     </div>
-</header>

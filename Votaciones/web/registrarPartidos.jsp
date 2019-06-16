@@ -11,10 +11,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <script src="scripts/validarEspacios.js" type="text/javascript"></script>
+        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>Registrar Partido</title>
     </head>
     <body>
-        <jsp:directive.include file="headerAdministrador.jsp" />        
+        <jsp:directive.include file="headerAdministrador.jsp" /> 
+        <%
+            HttpSession sesionActual = request.getSession();
+            String id = (String) sesionActual.getAttribute("usuario");
+            if (sesionActual.getAttribute("usuario") != null) {
+                id = sesionActual.getAttribute("usuario").toString();
+
+            } else {
+                request.getRequestDispatcher("errorLogin.jsp").forward(request, response);
+            }
+        %>
         <div id = "wrapper">
             <div class ="titRegis">
                 <h1>
@@ -22,10 +34,14 @@
                 </h1>
             </div>
             <div class="form">
-                <form id="form1" action="ServicioAgregarPartido" method="post" enctype="multipart/form-data">
-                    <table>
+                <form id="form1" action="ServicioAgregarPartido" onsubmit='return validarEspaciosRegistroPartido()' method="post" enctype="multipart/form-data">
+                    <table name="tabla">
                         <tr>
-                            <td>Siglas</td><td><input type="text"autocomplete="off" placeholder="Siglas" name="siglas"/></td>
+                            <td>Siglas</td>
+                            <td>
+                                <input id="in" type="text"autocomplete="off" placeholder="Siglas" name="siglas"/>
+                                <div id="esiglas" style="color:#f00;"></div> 
+                            </td>                            
                         </tr> 
                         <tr>
                             <td>Nombre</td><td><input type="text"autocomplete="off" placeholder="Nombre" name="nombre"/></td>

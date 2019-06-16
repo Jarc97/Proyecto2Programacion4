@@ -77,7 +77,6 @@ public class GestorVotaciones {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 
     public boolean validarClaveCambio(HttpSession session) throws SQLException {
