@@ -1,8 +1,14 @@
 <%-- 
-    Document   : registrarPartidos
-    Created on : 12/06/2019, 04:14:56 PM
-    Author     : Feli
---%>
+// registrarPartidos.jsp  
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria
+// 
+// --%> 
 
 <%@page import="control.GestorPartidos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

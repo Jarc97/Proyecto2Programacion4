@@ -1,8 +1,15 @@
-<%--
-    Document   : paginaVotacion
-    Created on : 15/06/2019, 08:55:54 PM
-    Author     : Feli
---%>
+<%-- 
+// paginaVotacion.jsp  
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria
+// 
+// --%> 
+
 
 <%@page import="control.GestorPartidos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

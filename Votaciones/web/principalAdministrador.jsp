@@ -1,8 +1,16 @@
+
 <%-- 
-    Document   : principalAdministrador
-    Created on : 07/06/2019, 05:40:46 PM
-    Author     : Feli
---%>
+// principalAdministrador.jsp  
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria
+// 
+// --%> 
+
 
 <%@page import="control.GestorAdministradores"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
