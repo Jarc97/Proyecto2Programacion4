@@ -12,6 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <link href="css/tabla.css" rel="stylesheet" type="text/css"/>
+        <script src="scripts/contador.js" type="text/javascript"></script>
+        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>JSP Page</title>
     </head>
     <body>
@@ -29,34 +31,15 @@
         <jsp:directive.include file="headerUsuario.jsp" />
         <div id = "wrapper">
             <h1>
-                Por favor seleccione el partido.
+                Por favor, efectue su voto.
             </h1>
-            <div id="tiempo"></div>
-            <script>
-                function startTimer(duration, display) {
-                    var timer = duration, minutes, seconds;
-                    setInterval(function () {
-                        minutes = parseInt(timer / 60, 10);
-                        seconds = parseInt(timer % 60, 10);
-
-                        minutes = minutes < 10 ? "0" + minutes : minutes;
-                        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                        display.textContent = minutes + ":" + seconds;
-
-                        if (--timer < 0) {
-                            timer = duration;
-                        }
-                    }, 1000);
-                }
-
-            window.onload = function () {
-                var dosMinutos = 60 * 2,
-                    display = document.querySelector('#tiempo');
-                startTimer(dosMinutos, display);
-            };
-            </script>
-            <div>
+            <h3>
+                Recuerde que dispone de 2 minutos. Al acabarse el tiempo se cerrará la sesión.
+            </h3>
+            <p>Tiempo restante: 
+            <a id="tiempo"></a> 
+            </p>           
+            <div id = "votacion">
                 
             </div>
         </div>

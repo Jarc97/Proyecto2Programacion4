@@ -11,10 +11,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <script src="scripts/crearVotacion.js" type="text/javascript"></script>
+        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>Crear Votacion</title>
     </head>
     <body onload ="horaActual()">
-       <jsp:directive.include file="headerAdministrador.jsp" />        
+       <jsp:directive.include file="headerAdministrador.jsp" />     
+       <%
+            HttpSession sesionActual = request.getSession();
+            String id = (String) sesionActual.getAttribute("usuario");
+            if (sesionActual.getAttribute("usuario") != null) {
+                id = sesionActual.getAttribute("usuario").toString();
+
+            } else {
+                request.getRequestDispatcher("errorLogin.jsp").forward(request, response);
+            }
+        %>
         <div id = "wrapper">
             <div class ="titRegis">
                 <h1>

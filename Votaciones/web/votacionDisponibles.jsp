@@ -13,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <link href="css/tabla.css" rel="stylesheet" type="text/css"/>
+        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>JSP Page</title>
     </head>
     <body>

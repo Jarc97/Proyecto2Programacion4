@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="scripts/validarClave.js" type="text/javascript"></script>
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <% response.setHeader("cache-control", "no-cache, no-store, must-revalidate"); %>
         <title>JSP Page</title>
     </head>
     <body>
