@@ -49,6 +49,7 @@ public class ServicioVerVotaciones extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        response.sendRedirect("paginaVotacion.jsp");
         System.out.println("usuario en votacion1:" + usuario);
     }
 
