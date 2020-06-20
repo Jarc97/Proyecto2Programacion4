@@ -1,14 +1,483 @@
-<usuario>
-    <nombre>Julio</nombre>
-    <apellido1>Rodríguez</apellido1>
-    <apellido2>Chavarría</apellido2>
-    <cedula>116760031</cedula>
-    <clave>116760031</clave>
-</usuario>
-<usuario>
-    <nombre>Luis</nombre>
-    <apellido1>Soto</apellido1>
-    <apellido2>Cruz</apellido2>
-    <cedula>402360123</cedula>
-    <clave>402360123</clave>
-</usuario>
+<?xml version="1.0" encoding="UTF-8"?>
+<lista-usuarios>
+    <usuario>
+        <cedula>402370259</cedula>
+        <apellido1>Alfaro </apellido1>
+        <apellido2>Rodríguez</apellido2>
+        <nombre>Ismael</nombre>
+        <clave>402370259</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>402250407</cedula>
+        <apellido1>Alvarado </apellido1>
+        <apellido2>Ferreto</apellido2>
+        <nombre>María</nombre>
+        <clave>402250407</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>207970180</cedula>
+        <apellido1>Arroyo </apellido1>
+        <apellido2>Solórzano</apellido2>
+        <nombre>Luis</nombre>
+        <clave>207970180</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116960863</cedula>
+        <apellido1>Babb </apellido1>
+        <apellido2>Jiménez</apellido2>
+        <nombre>Diego</nombre>
+        <clave>116960863</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>801030879</cedula>
+        <apellido1>Basulto </apellido1>
+        <apellido2>Arzola</apellido2>
+        <nombre>Rachel</nombre>
+        <clave>801030879</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402380339</cedula>
+        <apellido1>Bravo </apellido1>
+        <apellido2>Zúñiga</apellido2>
+        <nombre>Luis</nombre>
+        <clave>402380339</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>113030275</cedula>
+        <apellido1>Cambronero </apellido1>
+        <apellido2>Murillo</apellido2>
+        <nombre>Mariela</nombre>
+        <clave>113030275</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402360503</cedula>
+        <apellido1>Campos </apellido1>
+        <apellido2>Montero</apellido2>
+        <nombre>Mauricio</nombre>
+        <clave>402360503</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116870078</cedula>
+        <apellido1>Cárdenas </apellido1>
+        <apellido2>Alpízar</apellido2>
+        <nombre>Lea</nombre>
+        <clave>116870078</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402300046</cedula>
+        <apellido1>Carvajal </apellido1>
+        <apellido2>Salazar</apellido2>
+        <nombre>Robert</nombre>
+        <clave>402300046</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>207660568</cedula>
+        <apellido1>Chaves </apellido1>
+        <apellido2>Acuña</apellido2>
+        <nombre>Josue</nombre>
+        <clave>207660568</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116970427</cedula>
+        <apellido1>Esquivel </apellido1>
+        <apellido2>Jiménez</apellido2>
+        <nombre>Joséf</nombre>
+        <clave>116970427</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116570271</cedula>
+        <apellido1>Garro </apellido1>
+        <apellido2>Eduarte</apellido2>
+        <nombre>Bryan</nombre>
+        <clave>116570271</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>116440310</cedula>
+        <apellido1>Gómez </apellido1>
+        <apellido2>Chaves</apellido2>
+        <nombre>Danny</nombre>
+        <clave>116440310</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402290312</cedula>
+        <apellido1>Méndez </apellido1>
+        <apellido2>Acuña</apellido2>
+        <nombre>Boris</nombre>
+        <clave>402290312</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116850387</cedula>
+        <apellido1>Molina </apellido1>
+        <apellido2>Sánchez</apellido2>
+        <nombre>Monserrath</nombre>
+        <clave>116850387</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116840372</cedula>
+        <apellido1>Moraga </apellido1>
+        <apellido2>Alfaro</apellido2>
+        <nombre>Moisés</nombre>
+        <clave>116840372</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116960431</cedula>
+        <apellido1>Morales </apellido1>
+        <apellido2>Alfaro</apellido2>
+        <nombre>Adrian</nombre>
+        <clave>116960431</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>117210245</cedula>
+        <apellido1>Peralta </apellido1>
+        <apellido2>Chaves</apellido2>
+        <nombre>Cristhian</nombre>
+        <clave>117210245</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>504190395</cedula>
+        <apellido1>Picado </apellido1>
+        <apellido2>Solano</apellido2>
+        <nombre>Arelis</nombre>
+        <clave>504190395</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116500065</cedula>
+        <apellido1>Quesada </apellido1>
+        <apellido2>Valerio</apellido2>
+        <nombre>José</nombre>
+        <clave>116500065</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>305030937</cedula>
+        <apellido1>Richmond </apellido1>
+        <apellido2>Solís</apellido2>
+        <nombre>John</nombre>
+        <clave>305030937</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116760031</cedula>
+        <apellido1>Rodríguez </apellido1>
+        <apellido2>Chavarria</apellido2>
+        <nombre>Julio</nombre>
+        <clave>116760031</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116920756</cedula>
+        <apellido1>Rojas </apellido1>
+        <apellido2>Hernández</apellido2>
+        <nombre>Naomi</nombre>
+        <clave>116920756</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>207630059</cedula>
+        <apellido1>Salgado </apellido1>
+        <apellido2>Rodríguez</apellido2>
+        <nombre>Fiorella</nombre>
+        <clave>207630059</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>115140633</cedula>
+        <apellido1>Sánchez </apellido1>
+        <apellido2>Loaiza</apellido2>
+        <nombre>Adriana Daniela</nombre>
+        <clave>115140633</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402290463</cedula>
+        <apellido1>Sánchez </apellido1>
+        <apellido2>Ramírez</apellido2>
+        <nombre>Brandon</nombre>
+        <clave>402290463</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>114260854</cedula>
+        <apellido1>Siles </apellido1>
+        <apellido2>Madrigal</apellido2>
+        <nombre>Alejandra</nombre>
+        <clave>114260854</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>115900955</cedula>
+        <apellido1>Solís </apellido1>
+        <apellido2>Quesada</apellido2>
+        <nombre>Christian</nombre>
+        <clave>115900955</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402360123</cedula>
+        <apellido1>Soto </apellido1>
+        <apellido2>Cruz</apellido2>
+        <nombre>Luis</nombre>
+        <clave>402360123</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>115930789</cedula>
+        <apellido1>Aguilar </apellido1>
+        <apellido2>Vidaurre</apellido2>
+        <nombre>Luis</nombre>
+        <clave>115930789</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>207600808</cedula>
+        <apellido1>Alvarado </apellido1>
+        <apellido2>Salas</apellido2>
+        <nombre>Gabriela</nombre>
+        <clave>207600808</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116770115</cedula>
+        <apellido1>Alvarado </apellido1>
+        <apellido2>Solórzano</apellido2>
+        <nombre>Cristobal</nombre>
+        <clave>116770115</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>116310252</cedula>
+        <apellido1>Álvarez </apellido1>
+        <apellido2>Carranza</apellido2>
+        <nombre>David</nombre>
+        <clave>116310252</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116330698</cedula>
+        <apellido1>Artavia </apellido1>
+        <apellido2>Donaire</apellido2>
+        <nombre>Joséph</nombre>
+        <clave>116330698</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116680496</cedula>
+        <apellido1>Bonilla </apellido1>
+        <apellido2>Valerio</apellido2>
+        <nombre>Alicia</nombre>
+        <clave>116680496</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116040135</cedula>
+        <apellido1>Cordero </apellido1>
+        <apellido2>Rodríguez</apellido2>
+        <nombre>Daniel</nombre>
+        <clave>116040135</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116570472</cedula>
+        <apellido1>Corrales </apellido1>
+        <apellido2>Fonseca</apellido2>
+        <nombre>Luis</nombre>
+        <clave>116570472</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>115690792</cedula>
+        <apellido1>Cruz </apellido1>
+        <apellido2>Rojas</apellido2>
+        <nombre>Andrea</nombre>
+        <clave>115690792</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>206580363</cedula>
+        <apellido1>Díaz </apellido1>
+        <apellido2>Gutiérrez</apellido2>
+        <nombre>Miguel</nombre>
+        <clave>206580363</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>304910102</cedula>
+        <apellido1>Fernández </apellido1>
+        <apellido2>Villalobos</apellido2>
+        <nombre>Nataly</nombre>
+        <clave>304910102</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>504210953</cedula>
+        <apellido1>Hernández </apellido1>
+        <apellido2>Rodríguez</apellido2>
+        <nombre>Djenane</nombre>
+        <clave>504210953</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402110202</cedula>
+        <apellido1>Jiménez </apellido1>
+        <apellido2>Cambronero</apellido2>
+        <nombre>Jazmín</nombre>
+        <clave>402110202</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>207140702</cedula>
+        <apellido1>Lobo </apellido1>
+        <apellido2>Campos</apellido2>
+        <nombre>Jeremy</nombre>
+        <clave>207140702</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116340204</cedula>
+        <apellido1>Madrigal </apellido1>
+        <apellido2>Vásquez</apellido2>
+        <nombre>Juan</nombre>
+        <clave>116340204</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>116360813</cedula>
+        <apellido1>Matarrita </apellido1>
+        <apellido2>Villalobos</apellido2>
+        <nombre>Javier</nombre>
+        <clave>116360813</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>116770151</cedula>
+        <apellido1>Montenegro </apellido1>
+        <apellido2>Brenes</apellido2>
+        <nombre>Elmer</nombre>
+        <clave>116770151</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116810263</cedula>
+        <apellido1>Monterrey </apellido1>
+        <apellido2>Benavides</apellido2>
+        <nombre>Diego</nombre>
+        <clave>116810263</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>305090739</cedula>
+        <apellido1>Navarro </apellido1>
+        <apellido2>Castillo</apellido2>
+        <nombre>Heison</nombre>
+        <clave>305090739</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>402370159</cedula>
+        <apellido1>Obando </apellido1>
+        <apellido2>Avendaña</apellido2>
+        <nombre>Carlos</nombre>
+        <clave>402370159</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116810717</cedula>
+        <apellido1>Pico </apellido1>
+        <apellido2>García</apellido2>
+        <nombre>Javier</nombre>
+        <clave>116810717</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>117280151</cedula>
+        <apellido1>Piedra </apellido1>
+        <apellido2>Walsh</apellido2>
+        <nombre>Luis</nombre>
+        <clave>117280151</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>A00119566</cedula>
+        <apellido1>Restrepo </apellido1>
+        <apellido2>Veintemilla</apellido2>
+        <nombre>Luis</nombre>
+        <clave>A00119566</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>A00131303</cedula>
+        <apellido1>Salinas </apellido1>
+        <apellido2>Gómez</apellido2>
+        <nombre>Joseline</nombre>
+        <clave>A00131303</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>402310866</cedula>
+        <apellido1>Sánchez </apellido1>
+        <apellido2>Chaves</apellido2>
+        <nombre>Enibeth</nombre>
+        <clave>402310866</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116240874</cedula>
+        <apellido1>Solano </apellido1>
+        <apellido2>Arias</apellido2>
+        <nombre>Stephany</nombre>
+        <clave>116240874</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>116420011</cedula>
+        <apellido1>Ureña </apellido1>
+        <apellido2>Rojas</apellido2>
+        <nombre>Melissa</nombre>
+        <clave>116420011</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>115520070</cedula>
+        <apellido1>Vargas </apellido1>
+        <apellido2>Jiménez</apellido2>
+        <nombre>Luis</nombre>
+        <clave>115520070</clave>
+        <activo>1</activo>
+    </usuario>
+    <usuario>
+        <cedula>117200555</cedula>
+        <apellido1>Zamora </apellido1>
+        <apellido2>Hernández</apellido2>
+        <nombre>Marco</nombre>
+        <clave>117200555</clave>
+        <activo>0</activo>
+    </usuario>
+    <usuario>
+        <cedula>116550242</cedula>
+        <apellido1>Zapata </apellido1>
+        <apellido2>Narváez</apellido2>
+        <nombre>Michael</nombre>
+        <clave>116550242</clave>
+        <activo>1</activo>
+    </usuario>
+</lista-usuarios>

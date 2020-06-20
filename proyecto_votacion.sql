@@ -1,7 +1,9 @@
+
 DROP SCHEMA IF EXISTS `bd_votaciones` ;
 CREATE SCHEMA IF NOT EXISTS `bd_votaciones` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci ;
 USE `bd_votaciones` ;
- 
+SET GLOBAL time_zone = '-6:00';
+
 DROP TABLE IF EXISTS `bd_votaciones`.`usuario` ;
 CREATE TABLE IF NOT EXISTS `bd_votaciones`.`usuario` (
   `cedula` VARCHAR(12) NOT NULL,
@@ -12,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `bd_votaciones`.`usuario` (
   `activo` TINYINT NOT NULL,
   PRIMARY KEY (`cedula`))
 ENGINE = InnoDB;
- 
+
 DROP TABLE IF EXISTS `bd_votaciones`.`administrador` ;
 CREATE TABLE IF NOT EXISTS `bd_votaciones`.`administrador` (
   `cedula` VARCHAR(12) NOT NULL,
@@ -21,19 +23,19 @@ CREATE TABLE IF NOT EXISTS `bd_votaciones`.`administrador` (
   `nombre` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(16) NOT NULL,
   `clave` VARCHAR(16) NOT NULL,
-  `observaciones` TEXT NULL,
   PRIMARY KEY (`cedula`))
 ENGINE = InnoDB;
- 
+
 DROP TABLE IF EXISTS `bd_votaciones`.`partido` ;
 CREATE TABLE IF NOT EXISTS `bd_votaciones`.`partido` (
   `siglas` VARCHAR(12) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `bandera` MEDIUMBLOB NULL,
+  `tipo_imagen` VARCHAR(45) NULL,
   `observaciones` TEXT NULL,
   PRIMARY KEY (`siglas`))
 ENGINE = InnoDB;
- 
+
 DROP TABLE IF EXISTS `bd_votaciones`.`votacion` ;
 CREATE TABLE IF NOT EXISTS `bd_votaciones`.`votacion` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -44,13 +46,14 @@ CREATE TABLE IF NOT EXISTS `bd_votaciones`.`votacion` (
   `estado` INT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
- 
+
 DROP TABLE IF EXISTS `bd_votaciones`.`votacion_partido` ;
 CREATE TABLE IF NOT EXISTS `bd_votaciones`.`votacion_partido` (
   `votacion_id` INT NOT NULL,
   `partido_siglas` VARCHAR(12) NOT NULL,
   `cedula_candidato` VARCHAR(12) NOT NULL,
   `foto_candidato` MEDIUMBLOB NULL,
+  `tipo_imagen` VARCHAR(45) NULL,
   `votos_obtenidos` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`votacion_id`, `partido_siglas`, `cedula_candidato`),
   INDEX `fk_votacion_partido_partido_idx` (`partido_siglas` ASC),
@@ -72,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `bd_votaciones`.`votacion_partido` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
- 
+
 DROP TABLE IF EXISTS `bd_votaciones`.`votacion_usuario` ;
 CREATE TABLE IF NOT EXISTS `bd_votaciones`.`votacion_usuario` (
   `votacion_id` INT NOT NULL,
@@ -92,3 +95,5 @@ CREATE TABLE IF NOT EXISTS `bd_votaciones`.`votacion_usuario` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+insert into bd_votaciones.administrador(cedula, apellido1, apellido2, nombre, usuario, clave) values('402360123','Soto','Cruz','Luis','atila','atila123');

@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.ListIterator;
 import javax.servlet.http.HttpSession;
 import modelo.Votacion;
-import org.apache.tomcat.util.net.jsse.openssl.Authentication;
+//import org.apache.tomcat.util.net.jsse.openssl.Authentication;
 
 public class GestorVotaciones {
 

@@ -56,7 +56,8 @@ public class ServicioVotar extends HttpServlet {
             listaDisponibles = GestorVotaciones.obtenerInstancia().mostrarVotacionesDisponibles(sesionActual);
             if(GestorVotaciones.obtenerInstancia().validarEstadoVotar(sesionActual) == 1){
                 //Aqui va el metodo de votar                 
-                
+                GestorPartidos gp = GestorPartidos.obtenerInstancia();
+                gp.voto(idvotacion, siglaPartido);
                 //======================
                 //Para cambiar el estado del usuario en la votacion.
                 GestorVotaciones.obtenerInstancia().cambiarEstadoVotar(sesionActual);
@@ -67,11 +68,9 @@ public class ServicioVotar extends HttpServlet {
         } catch (Exception e) {
                 System.out.println(e.getMessage());
         }
-            GestorPartidos gp = GestorPartidos.obtenerInstancia();
-            gp.voto(idvotacion, siglaPartido);
+            
 
-            response.sendRedirect("principalUsuario.jsp");
-//        }
+            response.sendRedirect("ServicioLogout");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
