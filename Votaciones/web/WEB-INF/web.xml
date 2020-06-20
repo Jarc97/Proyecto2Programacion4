@@ -4,9 +4,89 @@
         <servlet-name>ServicioCargarUsuarios</servlet-name>
         <servlet-class>servicios.ServicioCargarUsuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioAgregarPartido</servlet-name>
+        <servlet-class>servicios.ServicioAgregarPartido</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioCrearVotacion</servlet-name>
+        <servlet-class>servicios.ServicioCrearVotacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioLogin</servlet-name>
+        <servlet-class>servicios.ServicioLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioLogout</servlet-name>
+        <servlet-class>servicios.ServicioLogout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioAgregarAdministrador</servlet-name>
+        <servlet-class>servicios.ServicioAgregarAdministrador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioLoginAdmin</servlet-name>
+        <servlet-class>servicios.ServicioLoginAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioCambiarClave</servlet-name>
+        <servlet-class>servicios.ServicioCambiarClave</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioVotar</servlet-name>
+        <servlet-class>servicios.ServicioVotar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioValidarVoto</servlet-name>
+        <servlet-class>servicios.ServicioValidarVoto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioVerVotaciones</servlet-name>
+        <servlet-class>servicios.ServicioVerVotaciones</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioCargarUsuarios</servlet-name>
         <url-pattern>/ServicioCargarUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioAgregarPartido</servlet-name>
+        <url-pattern>/ServicioAgregarPartido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioCrearVotacion</servlet-name>
+        <url-pattern>/ServicioCrearVotacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioLogin</servlet-name>
+        <url-pattern>/ServicioLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioLogout</servlet-name>
+        <url-pattern>/ServicioLogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioAgregarAdministrador</servlet-name>
+        <url-pattern>/ServicioAgregarAdministrador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioLoginAdmin</servlet-name>
+        <url-pattern>/ServicioLoginAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioCambiarClave</servlet-name>
+        <url-pattern>/ServicioCambiarClave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioVotar</servlet-name>
+        <url-pattern>/ServicioVotar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioValidarVoto</servlet-name>
+        <url-pattern>/ServicioValidarVoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioVerVotaciones</servlet-name>
+        <url-pattern>/ServicioVerVotaciones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

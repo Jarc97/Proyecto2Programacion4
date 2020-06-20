@@ -1,0 +1,6 @@
+Implementado por Luis Felipe Soto Cruz y Julio Rodriguez Chavarria
+
+Instrucciones: 
+1- Debe correr el script adjunto para poder entrar como administrador con las siguientes credenciales: usuario:atila | clave:atila123
+2- El proyecto funciona acorde a la base de datos, por ende debe respetar el orden de inserción como en la base. 
+Ejemplo: Primero hacer un partido, luego cargar los usuarios y por último crear la votación. Debe respetar el orden por las dependencias de las tablas(foreing key).

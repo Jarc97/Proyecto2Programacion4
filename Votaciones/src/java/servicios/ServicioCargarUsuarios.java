@@ -1,11 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+// ServicioCargarUsuarios.java
+// 
+// EIF209 - Programación 4 – Proyecto #2
+// Abril 2019 
+// 
+// Autores: 
+//  - 402360123 Luis Felipe Soto Cruz
+//  - 116760031 Julio Rodriguez Chavarria 
 package servicios;
 
-import control.GestorCargaUsuarios;
+import control.GestorUsuarios;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,8 +45,8 @@ public class ServicioCargarUsuarios extends HttpServlet {
                 
                 String xmlStr = new Scanner(part.getInputStream()).useDelimiter("\\A").next();
                 
-                GestorCargaUsuarios gcu = GestorCargaUsuarios.obtenerInstancia();
-                gcu.interpretar(xmlStr);
+                GestorUsuarios gu = GestorUsuarios.obtenerInstancia();
+                gu.interpretar(xmlStr);
                 
                 if (nombreArchivo.isEmpty()) {
                     request.setAttribute("mensaje",
@@ -71,7 +75,7 @@ public class ServicioCargarUsuarios extends HttpServlet {
                     String.format("Ocurrió una excepción: '%s'", ex.getMessage()));
         }
 
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/principalAdministrador.jsp").forward(request, response);
 
     }
 
